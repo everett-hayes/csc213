@@ -2,18 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-struct node {
+typedef struct node {
     char data;
-    struct node * next;
-}; typedef struct node node;
+    struct node* next;
+} node;
 
-struct queue {
-    node * front;
-    node * back;
+typedef struct queue {
+    node* front;
+    node* back;
     int size;
     int capacity;
-}; typedef struct queue queue;
+} queue;
 
 //function index
 void initializeQueue(queue *q, int capacity);
@@ -114,6 +113,7 @@ void moveQueue(queue *q, char c) {
     node* newNode;
     newNode = malloc(sizeof(node));
     newNode->data = c;
+    newNode->next = NULL;
 
     q->front = newNode;
     q->back = newNode;
@@ -129,6 +129,7 @@ void moveQueue(queue *q, char c) {
     node* newNode;
     newNode = malloc(sizeof(node));
     newNode->data = c;
+    newNode->next = NULL;
 
     //stick the new node at the back
     q->back->next = newNode;
