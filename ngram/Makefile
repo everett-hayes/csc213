@@ -1,5 +1,5 @@
 CC := clang
-CFLAGS := -g -Wall -Werror -fsanitize=address
+CFLAGS := -g -Wall -Werror
 
 all: ngram
 
