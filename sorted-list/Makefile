@@ -1,5 +1,5 @@
 CC := clang
-CFLAGS := -g -Wall -Werror
+CFLAGS := -g -Wall -Werror -fsanitize=address
 
 all: sorted-list
 

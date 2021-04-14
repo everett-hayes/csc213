@@ -28,7 +28,6 @@ void sorted_list_destroy(sorted_list_t *lst) {
       free(temp);
   }
 
-  free(lst);
 }
 
 /**
@@ -43,7 +42,7 @@ void sorted_list_insert(sorted_list_t *lst, int value) {
   newNode->data = value;
   newNode->next = NULL;
   
-  //if the lst is empty or I am smaller than front
+  //if the lst is empty or I am smaller than front node
   if (lst->front == NULL || lst->front->data >= value) {
     newNode->next = lst->front;
     lst->front = newNode;
@@ -96,8 +95,10 @@ void sorted_list_print(sorted_list_t* lst) {
   node* curr = lst->front;
 
   while (curr != NULL) {
-    printf("%d ", curr->data);
+    printf("%d", curr->data);
     curr = curr->next;
+
+    if(curr != NULL) printf(" ");
   }
 
   printf("\n");
